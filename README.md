@@ -15,5 +15,7 @@ TODO
 
 ### Algoritms
 
+- 
+
 ### Inspiration
-TODO
+[programiz](https://www.programiz.com/dsa/algorithm)
