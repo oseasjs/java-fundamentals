@@ -20,7 +20,6 @@ public class QueueDSTest {
     public void testIsFullSuccessfully() {
         QueueDS queue = new QueueDS(1);
         queue.push(10);
-        queue.display();
         Assert.assertTrue(queue.isFull());
     }
 

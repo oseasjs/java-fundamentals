@@ -32,8 +32,8 @@ public class GraphAdjacentMatrixDSTest {
     @Test
     public void testNumVerticesTwoAndEdgeOneSuccessfully() {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(2);
-        graph.addEdge(1, 0);
-        graph.addEdge(1, 1);
+        graph.add(1, 0);
+        graph.add(1, 1);
         StringBuilder sb = new StringBuilder()
             .append("0 1 ")
             .append("\n")
@@ -56,9 +56,9 @@ public class GraphAdjacentMatrixDSTest {
     @Test
     public void testNumVerticesTwoAndEdgeTwoSuccessfully() {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(3);
-        graph.addEdge(2, 0);
-        graph.addEdge(2, 1);
-        graph.addEdge(2, 2);
+        graph.add(2, 0);
+        graph.add(2, 1);
+        graph.add(2, 2);
         StringBuilder sb = new StringBuilder()
             .append("0 0 1 ")
             .append("\n")
@@ -71,9 +71,9 @@ public class GraphAdjacentMatrixDSTest {
     @Test
     public void testNumVerticesTwoAndEdgeOneTwoThreeSuccessfully() {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(3);
-        graph.addEdge(0, 0);
-        graph.addEdge(1, 1);
-        graph.addEdge(2, 2);
+        graph.add(0, 0);
+        graph.add(1, 1);
+        graph.add(2, 2);
         StringBuilder sb = new StringBuilder()
             .append("1 0 0 ")
             .append("\n")
@@ -86,10 +86,10 @@ public class GraphAdjacentMatrixDSTest {
     @Test
     public void testNumVerticesTwoAndEdgeOneTwoThreeAndRemoveZeroSuccessfully() {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(3);
-        graph.addEdge(0, 0);
-        graph.addEdge(1, 1);
-        graph.addEdge(2, 2);
-        graph.removeEdge(0, 0);
+        graph.add(0, 0);
+        graph.add(1, 1);
+        graph.add(2, 2);
+        graph.remove(0, 0);
         StringBuilder sb = new StringBuilder()
             .append("0 0 0 ")
             .append("\n")
@@ -102,10 +102,10 @@ public class GraphAdjacentMatrixDSTest {
     @Test
     public void testNumVerticesTwoAndEdgeOneTwoThreeAndRemoveOneSuccessfully() {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(3);
-        graph.addEdge(0, 0);
-        graph.addEdge(1, 1);
-        graph.addEdge(2, 2);
-        graph.removeEdge(1, 1);
+        graph.add(0, 0);
+        graph.add(1, 1);
+        graph.add(2, 2);
+        graph.remove(1, 1);
         StringBuilder sb = new StringBuilder()
             .append("1 0 0 ")
             .append("\n")
@@ -118,11 +118,11 @@ public class GraphAdjacentMatrixDSTest {
     @Test
     public void testNumVerticesTwoAndEdgeOneTwoThreeAndRemoveOneTwoSuccessfully() {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(3);
-        graph.addEdge(0, 0);
-        graph.addEdge(1, 1);
-        graph.addEdge(2, 2);
-        graph.removeEdge(1, 1);
-        graph.removeEdge(2, 2);
+        graph.add(0, 0);
+        graph.add(1, 1);
+        graph.add(2, 2);
+        graph.remove(1, 1);
+        graph.remove(2, 2);
         StringBuilder sb = new StringBuilder()
             .append("1 0 0 ")
             .append("\n")

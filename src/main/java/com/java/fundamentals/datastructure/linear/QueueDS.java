@@ -54,7 +54,7 @@ public class QueueDS {
 
     }
 
-    public void display() {
+    public void print() {
         if (isEmpty()) {
             throw new RuntimeException("Queue is empty");
         }
@@ -65,6 +65,39 @@ public class QueueDS {
         }
 
         System.out.println("Rear Index: " + this.rear);
+    }
+
+    private void validate(boolean expected, boolean result) {
+        if (result != expected)
+            throw new RuntimeException(String.format("Invalid result. Expected %b, but found %b",
+                expected, result));
+    }
+
+    private void validate(int expected, int result) {
+        if (result != expected)
+            throw new RuntimeException(String.format("Invalid result. Expected %d, but found %d",
+                expected, result));
+    }
+
+    public static void main(String[] args) {
+
+        QueueDS queue = new QueueDS(2);
+        queue.push(10);
+        queue.push(20);
+
+        queue.validate(true, queue.isFull());
+        queue.validate(false, queue.isEmpty());
+
+        int result = queue.pull();
+        queue.validate(10, result);
+        queue.validate(false, queue.isFull());
+        queue.validate(false, queue.isEmpty());
+
+        result = queue.pull();
+        queue.validate(20, result);
+        queue.validate(false, queue.isFull());
+        queue.validate(true, queue.isEmpty());
+
     }
 
 }

@@ -1,7 +1,5 @@
 package com.java.fundamentals.datastructure.nonlinear;
 
-import java.util.Arrays;
-
 public class GraphAdjacentMatrixDS {
 
     private boolean adjacentMatrix [][];
@@ -12,12 +10,12 @@ public class GraphAdjacentMatrixDS {
         this.numVertices = numVertices;
     }
 
-    public void addEdge(int i, int j) {
+    public void add(int i, int j) {
         this.adjacentMatrix[i][j] = true;
         this.adjacentMatrix[j][i] = true;
     }
 
-    public void removeEdge(int i, int j) {
+    public void remove(int i, int j) {
         this.adjacentMatrix[i][j] = false;
         this.adjacentMatrix[j][i] = false;
     }
@@ -36,12 +34,12 @@ public class GraphAdjacentMatrixDS {
 
     public static void main(String[] args) {
         GraphAdjacentMatrixDS graph = new GraphAdjacentMatrixDS(4);
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
-        graph.addEdge(2, 1);
+        graph.add(0, 1);
+        graph.add(0, 2);
+        graph.add(1, 2);
+        graph.add(2, 0);
+        graph.add(2, 1);
 
-        System.out.println(graph.toString());
+        System.out.println(graph);
     }
 }

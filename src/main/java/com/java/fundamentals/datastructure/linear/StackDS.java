@@ -34,7 +34,7 @@ public class StackDS {
         return this.array[top--];
     }
 
-    public void printStack() {
+    public void print() {
         String values = "";
         for (int i = 0; i <= this.top; i++) {
             values += this.array[i] + " ";
@@ -42,16 +42,54 @@ public class StackDS {
         System.out.println(values);
     }
 
+    private void validate(boolean expected, boolean result) {
+        if (result != expected)
+            throw new RuntimeException(String.format("Invalid result. Expected %b, but found %b",
+                expected, result));
+    }
+
+    private void validate(int expected, int result) {
+        if (result != expected)
+            throw new RuntimeException(String.format("Invalid result. Expected %d, but found %d",
+                expected, result));
+    }
+
     public static void main(String[] args) {
         StackDS stack = new StackDS(3);
+        stack.validate(true, stack.isEmpty());
         stack.push(10);
-        stack.printStack();
+
+        stack.print();
+        stack.validate(false, stack.isFull());
+        stack.validate(false, stack.isEmpty());
+
         stack.push(20);
-        stack.printStack();
+        stack.print();
+        stack.validate(false, stack.isFull());
+        stack.validate(false, stack.isEmpty());
+
         stack.push(30);
-        stack.printStack();
-        stack.pop();
-        stack.printStack();
+        stack.print();
+        stack.validate(true, stack.isFull());
+
+        int result = stack.pop();
+        stack.print();
+        stack.validate(false, stack.isFull());
+        stack.validate(false, stack.isEmpty());
+        stack.validate(30, result);
+
+        result = stack.pop();
+        stack.print();
+        stack.validate(false, stack.isFull());
+        stack.validate(false, stack.isEmpty());
+        stack.validate(20, result);
+
+        result = stack.pop();
+        stack.print();
+        stack.validate(false, stack.isFull());
+        stack.validate(true, stack.isEmpty());
+        stack.validate(10, result);
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.java.fundamentals.algoritms;
+package com.java.fundamentals.algoritms.sort;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -7,8 +7,6 @@ import org.junit.Test;
 import java.util.Arrays;
 
 public class SortAlgorithmsTest {
-
-    private final SortAlgorithms sort = new SortAlgorithms();
 
     private int[] values;
     private int[] expected;
@@ -21,19 +19,19 @@ public class SortAlgorithmsTest {
 
     @Test
     public void testBubbleSortSuccessfully() {
-        sort.bubbleSort(values);
+        new BubbleSort().sort(values);
         Assert.assertEquals(Arrays.toString(expected), Arrays.toString(values));
     }
 
     @Test
     public void testSelectionSortSuccessfully() {
-        sort.selectionSort(values);
+        new SelectionSort().sort(values);
         Assert.assertEquals(Arrays.toString(expected), Arrays.toString(values));
     }
 
     @Test
     public void testInsertionSortSuccessfully() {
-        sort.insertionSort(values);
+        new InsertionSort().sort(values);
         Assert.assertEquals(Arrays.toString(expected), Arrays.toString(values));
     }
 
