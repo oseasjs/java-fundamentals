@@ -1,7 +1,7 @@
 # Java Fundamentals
 
 ### Description
-TODO
+Project to study Java Core and DSA (Data Structure and Algorithms)
 
 ### Data Structure
 
@@ -23,5 +23,23 @@ TODO
   - Linear Search
   - Binary Search
 
+### Exercises
+- BracketBalance
+- MultiSum
+- StairCase
+- Temperatures
+
+### Thread
+- Local
+  - ThreadLocal Counter
+  - ThreadLocal with User
+- Pool
+  - ThreadPool Counter
+- Shared
+  - SharedMap with User
+- Simple
+  - SimpleThread
+
 ### Inspiration
-[programiz](https://www.programiz.com/dsa/algorithm)
+* [programiz](https://www.programiz.com/dsa/algorithm)
+* [Clean Code, Clean Architecture, TDD and SOLID principles](http://cleancoder.com/products)
