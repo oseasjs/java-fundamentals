@@ -15,6 +15,19 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * Binary Search Complexity
+     *
+     * Time Complexities
+     *     Best case complexity: O(1)
+     *     Average case complexity: O(log n)
+     *     Worst case complexity: O(log n)
+     *
+     * Space Complexity
+     *
+     * The space complexity of the binary search is O(1).
+     * @param args
+     */
     public static void main(String[] args) {
 
         int[] values = new int[]{2, 3, 4, 5, 6, 7, 8, 9};

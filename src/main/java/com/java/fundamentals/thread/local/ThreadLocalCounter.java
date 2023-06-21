@@ -6,8 +6,8 @@ import java.util.stream.Stream;
 
 public class ThreadLocalCounter implements Runnable {
 
-    private int counter = 0;
-    private AtomicInteger counterAtomic = new AtomicInteger(0);
+    private int counter = 1;
+    private AtomicInteger counterAtomic = new AtomicInteger(1);
     private ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
 
     @Override
@@ -20,16 +20,24 @@ public class ThreadLocalCounter implements Runnable {
             threadLocal.set(0);
         }
 
-        System.out.println("ThreadLocal Counter - Thread Name: " + Thread.currentThread().getName() + " | current time: " + LocalDateTime.now());
-        System.out.println("ThreadLocal Counter - int: " + counter++);
-        System.out.println("ThreadLocal Counter - AtomicInteger: " + counterAtomic.incrementAndGet());
-        System.out.println("ThreadLocal Counter - ThreadLocal<Integer>: " + threadLocal.get());
+        StringBuffer textBuffer = new StringBuffer();
+        textBuffer.append("Thread Name: " + Thread.currentThread().getName());
+        textBuffer.append(" | ");
+        textBuffer.append("TD: " + LocalDateTime.now());
+        textBuffer.append(" | ");
+        textBuffer.append("counter: " + counter++);
+        textBuffer.append(" | ");
+        textBuffer.append("AtomicInteger: " + counterAtomic.incrementAndGet());
+        textBuffer.append(" | ");
+        textBuffer.append("ThreadLocal<Integer>: " + threadLocal.get());
+
+        System.out.println(textBuffer);
 
     }
 
     public static void main(String[] args) {
 
-        int totalThread = 10;
+        int totalThread = 9;
         boolean enableJoin = false;
 
         Runnable thread = new ThreadLocalCounter();

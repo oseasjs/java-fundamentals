@@ -10,6 +10,13 @@ public class LinearSearch {
         return -1;
     }
 
+    /**
+     * Linear Search Complexities
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     * @param args
+     */
     public static void main(String[] args) {
 
         int[] values = new int[]{2, 3, 4, 5, 6, 7, 8, 9};
