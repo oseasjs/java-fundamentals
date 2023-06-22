@@ -7,7 +7,7 @@ public class FilterJsonData {
 
     final static String jsonData = "\"{data\":\"key=name1, age=49, key=name2, age=51, key=name3, age=48, key=name4, age=52, key=name5, age=53}\"";
 
-    public static String filterByAgeHigherThat(String json, int age) {
+    public static String filterByAgeHigherThan(String json, int age) {
 
         String prefix = "\"{data\":\"";
         String suffix = "\"}";
@@ -27,7 +27,7 @@ public class FilterJsonData {
 
     public static void main(String[] args) {
 
-        String jsonFiltered = filterByAgeHigherThat(jsonData, 50);
+        String jsonFiltered = filterByAgeHigherThan(jsonData, 50);
         System.out.println(jsonFiltered);
 
     }
