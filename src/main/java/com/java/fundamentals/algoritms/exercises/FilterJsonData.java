@@ -1,33 +1,29 @@
 package com.java.fundamentals.algoritms.exercises;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.stream.Collectors;
 
 public class FilterJsonData {
 
-    final static String jsonData = "\"{data\":\"key=name1, age=49, key=name2, age=51, key=name3, age=48, key=name4, age=52, key=name5, age=53}\"";
+    private static String filterByAgeGraterThanEquals(String json, int age) {
 
-    public static String filterByAgeHigherThan(String json, int age) {
-
-        String prefix = "\"{data\":\"";
-        String suffix = "\"}";
-
-        String valueWithoutQuotes = json.substring(9).replace("}\"", "");
-        String[] values = valueWithoutQuotes.split(", k");
-
-        String val = Arrays
-                .stream(values)
-                .map(line -> line.startsWith("k") ? line : "k" + line)
-                .filter(line -> (Integer.valueOf(line.split("=")[2]) >= age))
+        String jsonFiltered = Arrays.stream(json.substring(9, json.length() -2).split(", k"))
+                .filter(item -> Integer.valueOf(item.split("age=") [1]) >= age)
+                .map(item -> item.startsWith("k") ? item : "k" + item)
                 .collect(Collectors.joining(", "));
 
-        return prefix + val + suffix;
-
+        return json.substring(0, 9)
+                .concat(jsonFiltered)
+                .concat(json.substring(json.length() -2));
     }
 
     public static void main(String[] args) {
 
-        String jsonFiltered = filterByAgeHigherThan(jsonData, 50);
+        final String jsonData = "{\"data\":\"key=name1, age=49, key=name2, age=51, key=name3, age=48, key=name4, age=52, key=name5, age=53\"}";
+        System.out.println(jsonData);
+        String jsonFiltered = filterByAgeGraterThanEquals(jsonData, 50);
         System.out.println(jsonFiltered);
 
     }

@@ -20,7 +20,6 @@ public class Strategy {
         int multipluResult = context.executeStrategy(12, 12);
         System.out.println("12 * 12 = " + multipluResult);
 
-
     }
 }
 

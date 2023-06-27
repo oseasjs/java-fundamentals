@@ -1,5 +1,18 @@
 package com.java.fundamentals.algoritms.search;
 
+/**
+ * Binary Search Complexity Recursive
+ *
+ * Time Complexities
+ *
+ *     Best case complexity: O(1)
+ *     Average case complexity: O(log n)
+ *     Worst case complexity: O(log n)
+ *
+ * Space Complexity
+ *
+ * The space complexity of the binary search recursive is O(log n).
+ */
 public class BinarySearchRecursive {
 
     public int search(int[] arr, int value, int low, int high) {
@@ -14,22 +27,6 @@ public class BinarySearchRecursive {
         }
         return -1;
     }
-
-    /**
-     * Binary Search Complexity Recursive
-     *
-     * Time Complexities
-     *
-     *     Best case complexity: O(1)
-     *     Average case complexity: O(log n)
-     *     Worst case complexity: O(log n)
-     *
-     * Space Complexity
-     *
-     * The space complexity of the binary search recursive is O(1).
-     *
-     * @param args
-     */
 
     public static void main(String[] args) {
 

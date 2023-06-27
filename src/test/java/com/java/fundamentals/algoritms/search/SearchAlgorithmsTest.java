@@ -16,7 +16,7 @@ public class SearchAlgorithmsTest {
 
     @Test
     public void testBinarySearchSuccessfully() {
-        Assert.assertEquals(5, new BinarySearch().search(values, 7, 0, values.length -1));
+        Assert.assertEquals(5, new BinarySearch().search(values, 7));
     }
 
     @Test
